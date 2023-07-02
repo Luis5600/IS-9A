@@ -1,0 +1,65 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Estudiante {
+  id: ID!
+  identificacion: String!
+  nombre: String!
+  curso: String!
+  representante: String!
+  estado: Boolean!
+}
+
+type Persona {
+  id: ID!
+  identificacion: String!
+  nombre: String!
+  estado: Boolean!
+}
+
+type Query {
+  estudiantes: [Estudiante!]!
+  estudiante(id: ID!): Estudiante!
+  personas: [Persona!]!
+  persona(id: ID!): Persona!
+}
+
+type Mutation {
+  createEstudiante(createEstudianteInput: CreateEstudianteInput!): Estudiante!
+  updateEstudiante(updateEstudianteInput: UpdateEstudianteInput!): Estudiante!
+  removeEstudiante(id: ID!): Estudiante!
+  createPersona(createPersonaInput: CreatePersonaInput!): Persona!
+  updatePersona(updatePersonaInput: UpdatePersonaInput!): Persona!
+  removePersona(id: ID!): Persona!
+}
+
+input CreateEstudianteInput {
+  identificacion: String!
+  nombre: String!
+  curso: String!
+  representante: String!
+  estado: Boolean!
+}
+
+input UpdateEstudianteInput {
+  identificacion: String
+  nombre: String
+  curso: String
+  representante: String
+  estado: Boolean
+  id: ID!
+}
+
+input CreatePersonaInput {
+  identificacion: String!
+  nombre: String!
+  estado: Boolean!
+}
+
+input UpdatePersonaInput {
+  identificacion: String
+  nombre: String
+  estado: Boolean
+  id: ID!
+}
